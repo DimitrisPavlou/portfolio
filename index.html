@@ -3,166 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - AI & ML Engineer</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Dimitris Pavlou | AI & ML Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Premium Global Mesh Background -->
+    <div class="mesh-bg"></div>
+
+    <!-- Modern Glass Navbar -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Portfolio<span class="logo-dot">.</span></a>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#" id="contact-btn">Contact</a></li>
-                <li>
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-                        <i class="fas fa-sun theme-icon" id="light-icon"></i>
-                        <i class="fas fa-moon theme-icon" id="dark-icon"></i>
-                    </button>
-                </li>
-            </ul>
+            <a href="#" class="logo">dp<span class="logo-dot">.</span></a>
+            <div class="nav-actions">
+                <ul class="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+                <a href="#" id="contact-btn" class="btn btn-secondary">Connect</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun theme-icon" id="light-icon"></i>
+                    <i class="fas fa-moon theme-icon" id="dark-icon"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Neo-Hero Section -->
     <header class="hero">
         <div class="hero-content">
             <h1 class="hero-title">
-                Hi, I am <span class="highlight">Dimitris Pavlou</span>
+                Hi, I'm <span class="highlight">Dimitris Pavlou</span>
             </h1>
             <p class="hero-subtitle">
-                Building the Future with AI & Machine Learning
+                Engineering intelligent systems, custom architectures, and high-performance ML pipelines.
             </p>
-            <a href="#about" class="btn btn-primary">
-                Learn More <i class="fas fa-arrow-down"></i>
-            </a>
-        </div>
-        <div class="hero-background">
-            <div class="gradient-sphere sphere-1"></div>
-            <div class="gradient-sphere sphere-2"></div>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-secondary">About <i class="fas fa-arrow-down"></i></a>
+                <a href="#experience" class="btn btn-primary">Experience <i class="fas fa-arrow-down"></i></a>
+                <a href="#projects" class="btn btn-secondary">Personal Projects <i class="fas fa-arrow-down"></i></a>
+            </div>
         </div>
     </header>
 
-    <!-- About Section -->
+    <!-- Bento Grid Canvas (About & High-Level Stats) -->
     <section id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p>
-                    I'm a passionate AI & Machine Learning Engineer with a deep focus on building intelligent systems 
-                    that solve real-world problems. My expertise spans computer vision, reinforcement learning, and 
-                    deep learning, with hands-on experience in developing production-ready models.
-                </p>
-                <p>
-                    I hold a Master of Engineering in Electrical and Computer Engineering, specializing in Machine Learning 
-                    and Data-Driven Engineering. My work focuses on bridging the gap between theoretical research and scalable, 
-                    real-world applications. From developing predictive models for medical diagnostics to engineering intelligent 
-                    energy optimization systems, I am dedicated to building high-performance solutions that solve complex, multi-disciplinary challenges.
-                </p>
-                <p>
-                    When I'm not coding, you'll find me exploring the latest research papers, contributing to 
-                    open-source projects, or experimenting with new ML architectures. I'm always eager to learn 
-                    and collaborate on challenging problems.
-                </p>
-                
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fas fa-brain"></i>
-                        <span>Deep Learning</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-eye"></i>
-                        <span>Computer Vision</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-robot"></i>
-                        <span>Reinforcement Learning</span>
-                    </div>
-                    <div class = "skill-item">
-                        <i class="fas fa-wand-magic-sparkles"></i>
-                        <span>Generative AI</span>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <span>Python & PyTorch</span>
-                    </div>
-                </div>
+        <div class="bento-container">
+            <div class="bento-item main-bio">
+                <div class="card-tag">Profile</div>
+                <h2>Bridging Research & Scalable Intelligence</h2>
+                <p>I am an AI & Machine Learning Engineer specializing in transforming complex mathematical concepts into production-grade systems. With a Master's in Electrical & Computer Engineering, my focus bridges theoretical exploration and high-throughput real-world deployment.</p>
+                <p>From fine-tuning multi-billion parameter LLMs to writing custom diffusion blocks in PyTorch, I build robust, self-optimizing software architectures.</p>
             </div>
             
-            <div class="about-stats">
-                <div class="stat-card">
-                    <span class="stat-number">6+</span>
-                    <span class="stat-label">Projects Completed</span>
+            <div class="bento-item dynamic-stats">
+                <div class="stat-box">
+                    <span class="stat-num">12+</span>
+                    <span class="stat-txt">Models Shipped</span>
                 </div>
-                <div class="stat-card">
-                    <span class="stat-number">1+</span>
-                    <span class="stat-label">Years Experience</span>
+                <div class="stat-box">
+                    <span class="stat-num">2+</span>
+                    <span class="stat-txt">Years Experience</span>
+                    <span class="stat-caption">R&amp;D AI/ML Engineering</span>
+                </div>
+            </div>
+
+            <div class="bento-item skills-bento">
+                <div class="card-tag">Core Toolkit</div>
+                <div class="skills-flex">
+                    <span class="pill"><i class="fas fa-brain"></i> Deep Learning</span>
+                    <span class="pill"><i class="fas fa-eye"></i> Computer Vision</span>
+                    <span class="pill"><i class="fas fa-robot"></i> Reinforcement Learning</span>
+                    <span class="pill"><i class="fas fa-wand-magic-sparkles"></i> Generative AI</span>
+                    <span class="pill"><i class="fab fa-python"></i> PyTorch & Python</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Sleek Experience Timeline -->
+    <section id="experience">
+        <div class="section-container">
+            <div class="section-header-left">
+                <span class="pre-title">Chronology</span>
+                <h2 class="section-title">Professional History</h2>
+            </div>
+
+            <div class="modern-timeline">
+                <div class="timeline-row">
+                    <div class="timeline-meta">
+                        <span class="tm-date">Mar 2026 – Sep 2026</span>
+                        <span class="tm-org">Welocalize</span>
+                    </div>
+                    <div class="timeline-body">
+                        <h3>R&D AI/ML Engineer</h3>
+                        <p>Designed and executed benchmarks across next-gen LLMs (Claude 4.6, GPT-5.4) for Neural Machine Translation, optimizing performance envelopes. Ran experiments improving translation outputs by 5% on edit distance and 7–10 points on BLEU score metrics.</p>
+                        <div class="tech-stack">
+                            <span class="tag">LLMs</span>
+                            <span class="tag">Agentic AI</span>
+                            <span class="tag">NMT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-row">
+                    <div class="timeline-meta">
+                        <span class="tm-date">Jul 2024 – Oct 2025</span>
+                        <span class="tm-org">Net2Grid B.V.</span>
+                    </div>
+                    <div class="timeline-body">
+                        <h3>R&D Machine Learning Engineer</h3>
+                        <p>Developed 1D U-Net and Diffusion Transformer architectures within a custom DDIM framework for complex EV time series data. Increased classification capability bounds by 13% on F1-score and shaved off 11% error on MAPE metrics.</p>
+                        <div class="tech-stack">
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Diffusion Models</span>
+                            <span class="tag">Time Series</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Showcase System -->
     <section id="projects">
         <div class="section-container">
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-description">Explore my recent work in AI and Machine Learning</p>
-            
+            <div class="section-header-center">
+                <h2>Featured Engineering Outputs</h2>
+                <p>Interactive code architectures and production systems.</p>
+            </div>
             <div class="project-grid" id="project-container">
-                <!-- Projects will be dynamically inserted here -->
+                <!-- Programmatically generated templates hook here safely -->
             </div>
         </div>
     </section>
 
-    <!-- Contact Modal -->
+    <!-- Connect Overlay (Modal) -->
     <div id="contact-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-card">
             <span class="close">&times;</span>
-            <h2>Let's Connect</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h3>Email</h3>
-                        <a href="mailto:dimitrispavlou10@gmail.com">dimitrispavlou10@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <div>
-                        <h3>LinkedIn</h3>
-                        <a href="https://www.linkedin.com/in/dimitrispavlou/" target="_blank">Dimitris Pavlou</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <h3>GitHub</h3>
-                        <a href="https://github.com/DimitrisPavlou" target="_blank">DimitrisPavlou</a>
-                    </div>
-                </div>
+            <h2>Let's build together</h2>
+            <div class="contact-links">
+                <a href="mailto:dimitrispavlou10@gmail.com" class="c-link"><i class="fas fa-envelope"></i> dimitrispavlou10@gmail.com</a>
+                <a href="https://www.linkedin.com/in/dimitrispavlou/" target="_blank" class="c-link"><i class="fab fa-linkedin"></i> Dimitris Pavlou</a>
+                <a href="https://github.com/DimitrisPavlou" target="_blank" class="c-link"><i class="fab fa-github"></i> DimitrisPavlou</a>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Portfolio. All rights reserved.</p>
-            <p class="footer-email">
-                <i class="fas fa-envelope"></i> 
-                <a href="mailto:dimitrispavlou10@gmail.com">dimitrispavlou10@gmail.com</a>
-            </p>
-            <div class="socials">
-                <a href="https://github.com/DimitrisPavlou" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/dimitrispavlou/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
+        <p>&copy; 2026 Dimitris Pavlou. Built with absolute performant engineering protocols.</p>
     </footer>
 
     <script src="js/script.js"></script>

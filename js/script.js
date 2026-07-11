@@ -1,14 +1,33 @@
 // ===== PROJECT DATA =====
+// Featured projects (highlighted on the CV) are listed first.
 const projects = [
     {
         id: "medical-imaging",
         title: "Computer Vision - Medical Imaging",
-        description: "Developed deep learning models for automated diagnosis and segmentation of medical scans, focusing on accuracy and clinical reliability.",
+        description: "Trained and benchmarked CNN, ResNet-18, and Vision Transformer architectures for classifying medical tissue scans, pushing AUC scores past publicly reported benchmarks on TissueMNIST2D through targeted transfer learning.",
         tech: "PyTorch, ResNets, Vision Transformers",
         github: "https://github.com/DimitrisPavlou/TissueMNIST2D-Classification-CNN-ResNet18-Vision-Transformer-Transfer-Learning",
-        markdown: "projects/medical_imaging.md"
+        markdown: "projects/medical_imaging.md",
+        featured: true
     },
-    
+    {
+        id: "tensor-library",
+        title: "tl — Tensor Library",
+        description: "A from-scratch, header-only C++20 tensor library built as a NumPy/PyTorch-style numerical core: stride-based views, broadcasting, batched GEMM, reverse-mode autograd and RK4 ODE solvers — validated by 272 unit tests and benchmarked at ~187 GFLOP/s with OpenMP.",
+        tech: "C++20, Templates, Autograd",
+        github: "https://github.com/DimitrisPavlou/tl",
+        markdown: "projects/tensor_library.md",
+        featured: true
+    },
+    {
+        id: "helios-rl",
+        title: "Helios RL",
+        description: "A Reinforcement Learning library of custom agents with a clean, documented API for solving Gymnasium and custom environments, paired with a rule-extraction pipeline that distills trained policies into interpretable decision models.",
+        tech: "PyTorch, Gymnasium, Explainable AI",
+        github: null,
+        markdown: "projects/helios_rl.md",
+        featured: true
+    },
     {
         id: "optimkit",
         title: "OptimKit",
@@ -16,14 +35,6 @@ const projects = [
         tech: "NumPy, SciPy, Optimization Theory",
         github: "https://github.com/DimitrisPavlou/OptimKit",
         markdown: "projects/optimkit.md"
-    },
-    {
-        id: "lunar-lander",
-        title: "Lunar Lander RL",
-        description: "Developed and benchmarked multiple Reinforcement Learning agents from scratch o achieve optimal control in the Gymnasium Lunar Lander environment. Focused on reward shaping and hyperparameter tuning to ensure stable convergence.",
-        tech: "OpenAI Gym, PyTorch, RL",
-        github: "https://github.com/DimitrisPavlou/Gymnasium-Lunar-Lander-RL-Project",
-        markdown: "projects/lunar_lander.md"
     },
     {
         id: "grid-world",
@@ -40,23 +51,23 @@ const projects = [
         tech: "NumPy, Python",
         github: "https://github.com/DimitrisPavlou/Python-Implementation-of-an-MLP",
         markdown: "projects/mlp.md"
-    }, 
-    { 
+    },
+    {
         id: "dip_suite",
         title: "Digital Image Processing Suite",
         description: "Developed a modular Python library implementing fundamental Digital Image Processing algorithms from first principles.",
         tech: "NumPy, Python, OpenCV",
         github: "https://github.com/DimitrisPavlou/Digital-Image-Processing-Project",
         markdown: "projects/dip_suite.md"
-    }, 
-    { 
+    },
+    {
         id: "system_modeling",
         title: "Modeling-and-Simulation-of-Dynamical-Systems",
         description: "A three part poject about adaptive control and system identification for a Dynamical Systems",
         tech: "Matlab",
         github: "https://github.com/DimitrisPavlou/Modeling-and-Simulation-of-Dynamical-Systems",
         markdown: "projects/modeling.md"
-    }
+    },
 ];
 
 // ===== THEME MANAGEMENT =====
@@ -104,10 +115,11 @@ function renderProjects() {
     
     projects.forEach(project => {
         const card = document.createElement('div');
-        card.className = 'project-card';
-        
+        card.className = project.featured ? 'project-card featured' : 'project-card';
+
         // Buttons removed from here as requested
         card.innerHTML = `
+            ${project.featured ? '<span class="featured-badge"><i class="fas fa-star"></i> From my CV</span>' : ''}
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <div class="tech-stack">
@@ -156,10 +168,15 @@ async function loadProjectDetails() {
 
     // Update GitHub link and ensure it is ready for clicks
     const githubLink = document.getElementById('github-link');
-    githubLink.href = project.github;
-    // We force the target and rel here just in case
-    githubLink.setAttribute('target', '_blank');
-    githubLink.setAttribute('rel', 'noopener noreferrer');
+    if (project.github) {
+        githubLink.href = project.github;
+        // We force the target and rel here just in case
+        githubLink.setAttribute('target', '_blank');
+        githubLink.setAttribute('rel', 'noopener noreferrer');
+        githubLink.style.display = '';
+    } else {
+        githubLink.style.display = 'none';
+    }
 
     await loadMarkdownContent(project.markdown);
 }
@@ -184,14 +201,9 @@ async function loadMarkdownContent(markdownPath) {
     } catch (error) {
         console.error('Error loading markdown:', error);
         contentDiv.innerHTML = `
-            <div style="padding: 2rem; background: #fef2f2; border-left: 4px solid #ef4444; border-radius: 8px;">
-                <h3 style="color: #dc2626; margin-bottom: 1rem;">
-                    <i class="fas fa-exclamation-triangle"></i> Content Not Available
-                </h3>
-                <p style="color: #991b1b;">
-                    The project documentation is currently unavailable. 
-                    Please visit the GitHub repository for more information.
-                </p>
+            <div class="content-error">
+                <h3><i class="fas fa-exclamation-triangle"></i> Content Not Available</h3>
+                <p>The project documentation is currently unavailable. Please visit the GitHub repository for more information.</p>
             </div>
         `;
     }
@@ -206,7 +218,7 @@ function setupContactModal() {
     if (btn) {
         btn.onclick = function(e) {
             e.preventDefault();
-            modal.style.display = 'block';
+            modal.style.display = 'flex';
         }
     }
 
